@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="css/mycss.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Close Your Eyes</h1>
+				</section>
+				<section>
+					<section>
+						<h1>Why Do We Make It</h1>
+					</section>
+					<section>
+						<h2>Long Time Working With Eyes</h2>
+						<ul>
+							<li>Read books</li>
+							<li>Watch screens</li>
+							<li>Use cellphones</li>
+							<li>Near distance usage hurts eyes</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>What Does It Solve</h1>
+					</section>
+					<section>
+						<h2>On Your Glasses</h2>
+						<p>Detect near distance usage on your glasses, record and analyze the usage on the cloud.</p>
+					</section>
+					<section>
+						<h2>Real Time Show The Usage</h2>
+						<p>Build a website to show users their eyes' usage.</p>
+					</section>
+					<section>
+						<h2>Remind Users To Take Rest</h2>
+						<p>When a user keep near distance usage for a while, the glasses may prevent the user from doing that and remind him/her to take rest.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>How Do We Implement It</h1>
+					</section>
+					<section>
+						<h2>Arduino</h2>
+						<p>Attach a sonar to detect the distance of the user's eyesight.</p>
+						<p>Attach two servomotors to prevent the user from keep using if necessary.</p>
+					</section>
+					<section>
+						<h2>Asus Tinker Board</h2>
+						<p>Communicate with Arduino, including handling the signals of the sonar and sending the on/off signals of motors.</p>
+						<p>Build a connection with MicroSoft Azure Cloud server with websocket to transmit the data and control signals.</p>
+					</section>
+					<section>
+						<h2>MicroSoft Azure Cloud server</h2>
+						<p>Data center, websocket's server and website's server. Store users' data, analyze the data, real time send updates to existing websites, and send the control signals of motors.</p>
+					</section>
+					<section>
+						<h2>Website</h2>
+						<p>Real time render the chart of eyes' usage to let users be aware of the current usage and further arrange the usage.</p>
+					</section>
+				</section>
+				<section>
+					<h1><a href="http://haglass.japaneast.cloudapp.azure.com:3000/">DEMO</a></h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
